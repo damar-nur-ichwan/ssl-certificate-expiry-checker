@@ -14,8 +14,8 @@ This is a simple Nest.js application that allows you to retrieve SSL certificate
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/ssl-certificate-retrieval-app.git
-cd ssl-certificate-retrieval-app
+git clone https://github.com/damar-nur-ichwan/ssl-certificate-expiry-checker.git
+cd ssl-certificate-expiry-checker
 ```
 
 2. Install the dependencies:
@@ -45,7 +45,7 @@ docker run -p 3000:3000 -d damarnurichwan/ssl-certificate-expiry-checker
 
 ## Usage
 
-1. Use the application to retrieve SSL certificates for URLs. You can send a POST request to http://localhost:3000/ssl-certificate with the following JSON payload:
+1. Use the application to retrieve SSL certificates for URLs. You can send a POST request to http://localhost:3000/ssl-certificate/expiry with the following JSON payload:
 
 ```json
 {

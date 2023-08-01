@@ -5,7 +5,8 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.setGlobalPrefix('api');
+  const prefix = process.env.PREFIX || 'api';
+  app.setGlobalPrefix(prefix);
 
   const config = new DocumentBuilder()
     .setTitle('SSL Certificate Expiry Checker')
@@ -15,7 +16,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
 
   // Setup the Swagger UI using the same prefix as the application
-  SwaggerModule.setup('', app, document);
+  SwaggerModule.setup(prefix, app, document);
 
   await app.listen(3000);
 }
